@@ -55,3 +55,55 @@ a:hover {
     background-color: springgreen;
     columns: silver;
 }
+
+/*
+  Create page styles
+*/
+
+.form {
+    max-width: 70%;
+}
+
+.input {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    font-size: 1.3rem;
+    font-family: inherit;
+    border: 1px solid silver;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: tomato;
+    color: white;
+    font-size: 1.3rem;
+    border: none;
+    padding: 10px 20px;
+    font-family: inherit;
+}
+
+/*
+  To-do page styles
+*/
+
+.to-do-wrapper {
+    max-width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid silver;
+}
+
+.to-do {
+    font-size: 1.3rem;
+}
+
+.delete {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: tomato;
+    columns: white;
+}

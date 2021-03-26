@@ -1,0 +1,10 @@
+extends layout.pug 
+
+block content 
+    div.container
+        h1 All to-dos
+
+        each to-do in to-dos
+        div.to-do-wrapper
+            a.to-do(href='#')= to-dos
+            a.delete(href='#') delete

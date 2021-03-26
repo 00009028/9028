@@ -1,0 +1,14 @@
+extends layout.pug 
+
+block content  
+    .container
+        h1 Create To-Do 
+
+        form.form(action='/create' method='POST')
+            label Title
+            input.input(type='text' name='title')
+
+            label Description 
+            textarea.input(type="text" name="description") 
+
+            button.btn Create to-do
