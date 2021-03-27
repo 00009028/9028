@@ -16,8 +16,16 @@ app.get('/create', (req, res) => {
 
 const toDos = ['Go to university', 'Go to gym!']
 
-app.get('/to-dos', (req, res) => {
-    res.render('to-dos', { toDos: toDos })
+app.get('/toDo', (req, res) => {
+    res.render('toDos', { toDos: toDos })
+})
+
+app.get('/review', (req, res) => {
+    res.render('review')
+})
+
+app.get('/todos/detail', (req, res) => { 
+    res.render('detail')
 })
 
 app.listen(3000, err => {
