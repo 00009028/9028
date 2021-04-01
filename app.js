@@ -16,7 +16,7 @@ app.get('/create', (req, res) => {
 
 const toDos = ['Go to university', 'Go to gym!']
 
-app.get('/toDo', (req, res) => {
+app.get('/toDos', (req, res) => {
     res.render('toDos', { toDos: toDos })
 })
 
