@@ -14,5 +14,13 @@
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "pug": "^3.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/00009028/9028.git"
+  },
+  "bugs": {
+    "url": "https://github.com/00009028/9028/issues"
+  },
+  "homepage": "https://github.com/00009028/9028#readme"
 }

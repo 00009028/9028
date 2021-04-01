@@ -4,6 +4,12 @@ block content
     .container
         h1 Create To-Do 
 
+        if error 
+            p.error To-do app title or description cannot be empty! Try again!
+
+        if success 
+            p.success To-do is created successfully!
+
         form.form(action='/create' method='POST')
             label Title
             input.input(type='text' name='title')
