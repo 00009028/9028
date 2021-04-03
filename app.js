@@ -44,18 +44,45 @@ app.post('/create', (req, res) => {
     }
 })
 
-const toDos = ['Go to university', 'Go to gym!']
 
 app.get('/toDos', (req, res) => {
-    res.render('toDos', { toDos: toDos })
+
+    fs.readFile('./data/toDos.json', (err, data) => {
+        if (err) throw err
+
+        const toDos = JSON.parse(data)
+        res.render('toDos', { toDos: toDos })
+    })
+
 })
 
 app.get('/review', (req, res) => {
     res.render('review')
 })
 
-app.get('/todos/detail', (req, res) => {
-    res.render('detail')
+app.get('/api/v1/toDos', (req, res) => {
+    fs.readFile('./data/toDos.json', (err, data) => {
+        if (err) throw err
+
+        const toDos = JSON.parse(data)
+        
+        res.json(toDos)
+    })
+})
+
+app.get('/todos/:id', (req, res) => {
+    const id = req.params.id
+
+    fs.readFile('./data/toDos.json', (err, data) => {
+        if (err) throw err
+
+        const toDos = JSON.parse(data)
+         
+        const toDo = toDos.filter(toDo => toDo.id == id)[0]
+
+        res.render('detail', { toDo : toDo })
+
+    })
 })
 
 app.listen(3000, err => {

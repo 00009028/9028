@@ -6,5 +6,5 @@ block content
 
         each toDo in toDos
             div.to-do-wrapper
-                a.to-do(href='/toDos/detail')= toDos
+                a.to-do(href=`/toDos/${ toDo.id }`) #{ toDo.title }
                 a.delete(href='#') delete

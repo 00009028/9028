@@ -12,7 +12,7 @@ This web application was created to fullfill Web Technology module's requirement
 ```bash
 git clone https://github.com/00009028/9028.git
 ```
-2. Install the dependencies
+2.Install the dependencies
 ```bash 
 npm install
 ```
@@ -21,10 +21,10 @@ npm install
 node app.js
 ```
 
-##### Dependencies
+##### Web application dependencies
 - express.js
 - pug.js
 
 ##### Link to the source code:
 
-https://github.com/00009028/9028
+[link to the github repo:](https://github.com/00009028/9028)
