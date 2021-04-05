@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
     head
-        title To-do application
+        title.title To-do application
         link(rel='stylesheet' href='/static/styles/style.css')
 
     body
@@ -10,7 +10,8 @@ html(lang="en")
                 a(href='/') To-do application
 
             nav(class='nav') 
-                a(href='/toDos') All to-dos 
+                a(href='/toDos') All to-dos
+                a(href='/api/v1/toDos') API 
                 a(href='/deleted') Deleted to-dos
 
 

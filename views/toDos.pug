@@ -12,8 +12,3 @@ block content
                 a.to-do(href=`/toDos/${ toDo.id }`) #{ toDo.title }
                 if !toDo.deleted
                     a.delete(href=`/toDos/${ toDo.id }/delete`) Delete
-//-                 else 
-//-                     a.undone(href=`/${ todo.id}/update`) #{ todo.description }
-//-                         a.delete(href=`/${ todo.id }/delete`) Delete
-//- else
-//-     p.todo No any todo available

@@ -15,7 +15,7 @@ a {
 }
 
 a:hover {
-    color: tomato;
+    color: rgb(72, 228, 72);
 }
 
 .navbar {
@@ -33,13 +33,14 @@ a:hover {
     padding: 5px 10px;
 }
 
-.navbar > h1 > a {
+.navbar>h1>a {
     padding: 0;
 }
-       /*
+
+/*
   Home page styles
 */
-       
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -48,27 +49,31 @@ a:hover {
 
 .intro-msg {
     padding: 100px o 30px 0;
-    font-size: 2rem;
-    max-width: 60%;
+    font-size: 1.5rem;
+    max-width: 100%;
 }
 
 .featured {
     display: inline-block;
+    justify-content: center;
     padding: 10px 20px;
-    background-color: springgreen;
-    columns: silver;
+    background-color: rgb(140, 129, 168);
+    columns: white;
     margin-top: 30px;
+    margin-left: 300px;
 }
+
 
 .req {
     padding: 60px 0;
     max-width: 900px;
     font-size: 0.9rem;
 }
-       /*
+
+/*
   Create page styles
 */
-       
+
 .form {
     max-width: 70%;
 }
@@ -92,10 +97,11 @@ a:hover {
     padding: 10px 20px;
     font-family: inherit;
 }
-       /*
+
+/*
   To-do page styles
 */
-       
+
 .to-do-wrapper {
     max-width: 60%;
     display: flex;
