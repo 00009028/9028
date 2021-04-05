@@ -4,7 +4,16 @@ block content
     div.container
         h1 All to-dos
 
+        if id 
+            p.success ToDo with id #{ id } id deleted!
+
         each toDo in toDos
             div.to-do-wrapper
                 a.to-do(href=`/toDos/${ toDo.id }`) #{ toDo.title }
-                a.delete(href='#') delete
+                if !toDo.deleted
+                    a.delete(href=`/toDos/${ toDo.id }/delete`) Delete
+//-                 else 
+//-                     a.undone(href=`/${ todo.id}/update`) #{ todo.description }
+//-                         a.delete(href=`/${ todo.id }/delete`) Delete
+//- else
+//-     p.todo No any todo available

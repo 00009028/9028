@@ -27,4 +27,4 @@ node app.js
 
 ##### Link to the source code:
 
-[link to the github repo:](https://github.com/00009028/9028)
+[Link to the github repo](https://github.com/00009028/9028)

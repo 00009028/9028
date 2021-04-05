@@ -33,6 +33,7 @@ app.post('/create', (req, res) => {
                 id: id(),
                 title: title,
                 description: description,
+                deleted: false,
             })
 
             fs.writeFile('./data/toDos.json', JSON.stringify(toDos), err => {
@@ -50,15 +51,46 @@ app.get('/toDos', (req, res) => {
     fs.readFile('./data/toDos.json', (err, data) => {
         if (err) throw err
 
-        const toDos = JSON.parse(data)
+        const toDos = JSON.parse(data).filter(toDo => toDo.deleted == false)
+
         res.render('toDos', { toDos: toDos })
     })
 
 })
 
-app.get('/review', (req, res) => {
-    res.render('review')
+app.get('/deleted', (req, res) => {
+    fs.readFile('./data/toDos.json', (err, data) => {
+        if (err) throw err
+
+        const toDos = JSON.parse(data).filter(toDo => toDo.deleted == true)
+
+        res.render('toDos', { toDos: toDos })
+    })
 })
+
+app.get('/toDos/:id/delete', (req, res) => {
+    const id = req.params.id
+
+    fs.readFile('./data/toDos.json', (err, data) => {
+        if (err) res.sendStatus(500)
+    
+        const toDos = JSON.parse(data)
+        const toDO = toDos.filter(toDo => toDo.id == req.params.id)[0]
+        const toDoIdx = toDos.indexOf(toDO)
+        const splicedToDo = toDos.splice(toDoIdx, 1)[0]
+        splicedToDo.deleted = true
+        toDos.push(splicedToDo)
+    
+        fs.writeFile('./data/toDos.json', JSON.stringify(toDos), err => {
+          if (err) res.sendStatus(500)
+    
+          res.redirect('/toDos')
+        })
+        
+      })
+})
+
+
 
 app.get('/api/v1/toDos', (req, res) => {
     fs.readFile('./data/toDos.json', (err, data) => {
